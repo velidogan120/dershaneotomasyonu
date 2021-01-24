@@ -1,0 +1,9 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\MONSTER ABRA A59.2.2\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\MONSTER ABRA A59.2.2\\.nuget\\packages",
+      "C:\\Microsoft\\Xamarin\\NuGet"
+    ]
+  }
+}
