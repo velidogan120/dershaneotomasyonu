@@ -1,0 +1,12 @@
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\bin\Debug\net5.0\dershane.entity.deps.json
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\bin\Debug\net5.0\dershane.entity.dll
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\bin\Debug\net5.0\ref\dershane.entity.dll
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\bin\Debug\net5.0\dershane.entity.pdb
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\dershane.entity.csprojAssemblyReference.cache
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\dershane.entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\dershane.entity.AssemblyInfoInputs.cache
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\dershane.entity.AssemblyInfo.cs
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\dershane.entity.csproj.CoreCompileInputs.cache
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\dershane.entity.dll
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\ref\dershane.entity.dll
+C:\Users\MONSTER ABRA A59.2.2\dershane\dershane.entity\obj\Debug\net5.0\dershane.entity.pdb
