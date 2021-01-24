@@ -1,0 +1,117 @@
+@model BolumModel
+
+<h1 class="h3">Kategori Bilgilerini Düzenle</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Admin" asp-action="BolumEdit" method="POST">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" name="BolumId" value="@Model.BolumId">
+            <div class="form-group row">
+                <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Url" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Url">
+                    <span asp-validation-for="Url" class="text-danger"></span>
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Kategoriyi Kaydet</button>
+                </div>
+            </div>
+
+            
+                    <div id="ogrenciler">
+
+                    @for (int i = 0; i < Model.Ogrenciler.Count; i++)
+                    {
+                        <input type="hidden" name="Ogrenciler[@i].OgrenciId" value="@Model.Ogrenciler[@i].OgrenciId">
+                        <input type="hidden" name="Ogrenciler[@i].ImageUrl" value="@Model.Ogrenciler[@i].ImageUrl">
+                        <input type="hidden" name="Ogrenciler[@i].Name" value="@Model.Ogrenciler[@i].Name">
+                        <input type="hidden" name="Ogrenciler[@i].Sınıf" value="@Model.Ogrenciler[@i].Sınıf">
+                        <input type="hidden" name="Ogrenciler[@i].IsApproved" value="@Model.Ogrenciler[@i].IsApproved.ToString()">
+                    }
+                         
+            
+                    </div>
+
+
+
+        </form>
+    </div>
+    <div class="col-md-8">
+        
+<div class="row">
+    <div class="col-md-12">
+       
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td style="width: 30px;">Resim</td>
+                    <td>İsim</td>
+                    <td style="width: 20px;">Sınıf</td>
+                    <td style="width: 20px;">Onaylı</td>
+                    <td style="width: 150px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+                @if(Model.Ogrenciler.Count>0){
+
+
+
+                    @foreach (var item in Model.Ogrenciler)
+                        {
+                            <tr>
+                                <td>@item.OgrenciId</td>
+                                <td><img src="~/img/@item.ImageUrl" width="80"></td>
+                                <td>@item.Name</td>
+                                <td>@item.Sınıf</td>
+                                
+                                <td>
+                                    @if(item.IsApproved){
+                                    <i class="fas fa-check-circle"></i>
+                                    }
+                                    else{
+                                        <i class="fas fa-times-circle"></i>
+                                    }
+
+                                </td>
+                                <td>
+                                    <a href="/admin/ogrenciler/@item.OgrenciId" class="btn btn-primary btn-sm mr-2">Düzenle</a>
+                                    
+                                    <form action="/admin/deletefrombolum" method="POST" style="display: inline;">
+                                    <input type="hidden" name="ogrenciId" value="@item.OgrenciId">
+                                    <input type="hidden" name="bolumId" value="@Model.BolumId">
+                                    <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                    </form>    
+                                </td>
+                            </tr>
+                        }
+                }
+                else{
+                    <div class="alert alert-warning">
+                        <h3>Öğrenci Yok</h3>
+                    </div>
+
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

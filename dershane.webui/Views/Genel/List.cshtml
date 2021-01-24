@@ -1,0 +1,55 @@
+@model OgrenciListViewModel
+
+      <div class="row">
+          <div class="col-md-3">
+              @await Component.InvokeAsync("Bolumler")
+          </div>
+      
+            <div class="col-md-9">
+                <div class="row">
+                 
+                @foreach (var ogrenci in Model.Ogrenciler)
+                {
+                    <div class="col-md-4">
+                        @await Html.PartialAsync("_ogrenci",ogrenci)
+                    </div>
+                }
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+
+                            @for (int i = 0; i < Model.PageInfo.TotalPages(); i++)
+                            {
+                                @if(String.IsNullOrEmpty(Model.PageInfo.CurrentBolum))
+                                {
+                                <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")"><a class="page-link" href="/ogrenciler?page=@(i+1)">@(i+1)
+
+                                </a>
+                                </li>
+                                }
+                                else
+                                {
+                                    <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")">
+                                        <a class="page-link" href="/ogrenciler/@Model.PageInfo.CurrentBolum?page=@(i+1)">@(i+1)
+
+                                </a>
+                                </li>
+
+                                }
+                            }
+                            
+                            
+                        </ul>
+                    </nav>
+                    </div>
+                </div>
+            </div>
+            </div>
+        
+@section Scripts{
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+}

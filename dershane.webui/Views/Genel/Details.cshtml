@@ -1,0 +1,28 @@
+@model OgrenciDetailModel
+
+<div class="row">
+    <div class="col md-3">
+        <img src="~/img/@Model.Ogrenci.ImageUrl" class="img-fluid">
+    </div>
+    <div class="card-body">
+        <div class="col md-9">
+            <h5 class="mb-3">@Model.Ogrenci.Name</h5><hr>
+            @foreach (var item in Model.Bolumler)
+            {
+                <a asp-controller="genel" asp-action="list" asp-route-bolum="@item.Url" class="btn btn-link p-0 mb-3">@item.Name</a>
+            }
+            <div class="mb-3">
+                <h4 class="tect-primary mb-3">
+                <i class="fas fa-lira-sing"></i>@Model.Ogrenci.Sınıf
+                </h4>
+                <button type="submit" class="btn btn-primary byn-lg">Kart Ekle</button>
+            </h6>
+            
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p class="p-3">@Html.Raw(Model.Ogrenci.Description)</p>
+    </div>
+</div>
